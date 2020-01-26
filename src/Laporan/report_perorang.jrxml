@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="570" pageHeight="595" orientation="Landscape" columnWidth="530" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="no_induk" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     ranking.`no_induk` AS ranking_no_induk,
+     nilai.`id_nilai` AS nilai_id_nilai,
+     nilai.`nis` AS nilai_nis,
+     nilai.`nama_siswa` AS nilai_nama_siswa,
+     nilai.`kelas` AS nilai_kelas,
+     nilai.`kd_pelajaran` AS nilai_kd_pelajaran,
+     nilai.`kehadiran` AS nilai_kehadiran,
+     nilai.`nilai_uts` AS nilai_nilai_uts,
+     nilai.`nilai_uas` AS nilai_nilai_uas,
+     nilai.`nilai_tugas` AS nilai_nilai_tugas
+FROM
+     `nilai` nilai
+WHERE
+     no_induk = $P{no_induk}]]>
+	</queryString>
+	<field name="ranking_id_nilai" class="java.lang.String"/>
+	<field name="ranking_no_induk" class="java.lang.String"/>
+	<field name="ranking_nama_siswa" class="java.lang.String"/>
+	<field name="ranking_kelas" class="java.lang.String"/>
+	<field name="ranking_kehadiran" class="java.lang.Integer"/>
+	<field name="ranking_nilai_uts" class="java.lang.Integer"/>
+	<field name="ranking_nilai_uas" class="java.lang.Integer"/>
+	<field name="ranking_nilai_tugas" class="java.lang.Integer"/>
+	<field name="ranking_peringkat" class="java.lang.String"/>
+	<field name="ranking_rata_rata" class="java.lang.Integer"/>
+	<field name="ranking_grade" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="110" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="-5" width="530" height="115"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\CD Skripsi (Muhammad Ikbal  201543500886)\\04 SOFTWARE PROGRAM\\apk_informasi_adm_176\\src\\gambar\\Kop surat smpn 176 (2).jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="144" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="9" width="525" height="1"/>
+				<graphicElement>
+					<pen lineWidth="3.75" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="201" y="19" width="124" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NILAI PERORANGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="52" width="10" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="75" y="52" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ranking_id_nilai}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="8" y="52" width="49" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Id Nilai]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="89" width="49" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Induk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="89" width="10" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="114" width="49" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="114" width="10" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="75" y="89" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ranking_no_induk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="114" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ranking_nama_siswa}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="137" width="525" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="371" y="88" width="10" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="88" width="49" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kelas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="113" width="10" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="113" width="49" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Peringkat]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="394" y="88" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ranking_kelas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="113" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ranking_peringkat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="314" y="52" width="49" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kehadiran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="52" width="10" height="20"/>
+				<textElement/>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="394" y="52" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{ranking_kehadiran}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="74" width="524" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="39" width="527" height="1"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="101" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nilai UTS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="211" y="0" width="93" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nilai UAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="0" width="80" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nilai Tugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="412" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nilai Rata-Rata]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nama Pelajaran]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="101" y="3" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{ranking_nilai_uts}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="0" width="93" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{ranking_nilai_uas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="3" width="80" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{ranking_nilai_tugas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="412" y="3" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{ranking_rata_rata}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="131" splitType="Stretch">
+			<staticText>
+				<reportElement x="315" y="8" width="46" height="20"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jakarta, ]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="356" y="8" width="156" height="20"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="314" y="28" width="201" height="20"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kepala Sekolah SMP Negeri 176 Jakarta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="106" width="134" height="20"/>
+				<textElement textAlignment="Justified">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[NIP. 19680520842848124]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="87" width="98" height="20"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true" isItalic="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Suparjiyanto S.Pd]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="8" splitType="Stretch"/>
+	</summary>
+</jasperReport>

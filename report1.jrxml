@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     siswa.`id_siswa` AS siswa_id_siswa,
+     siswa.`nama_siswa` AS siswa_nama_siswa,
+     siswa.`alamat` AS siswa_alamat,
+     siswa.`no_telp` AS siswa_no_telp,
+     siswa.`jenis_kelamin` AS siswa_jenis_kelamin,
+     guru.`NIP` AS guru_NIP,
+     guru.`nama_guru` AS guru_nama_guru,
+     guru.`TTL` AS guru_TTL,
+     guru.`alamat` AS guru_alamat,
+     guru.`pendidikan` AS guru_pendidikan,
+     guru.`study` AS guru_study,
+     guru.`jenis_kelamin` AS guru_jenis_kelamin,
+     nilai.`id_nilai` AS nilai_id_nilai,
+     nilai.`no_induk` AS nilai_no_induk,
+     nilai.`nama_siswa` AS nilai_nama_siswa,
+     nilai.`kehadiran` AS nilai_kehadiran,
+     nilai.`kedisiplinan` AS nilai_kedisiplinan,
+     nilai.`keterampilan` AS nilai_keterampilan,
+     nilai.`kerapian` AS nilai_kerapian
+FROM
+     `guru` guru INNER JOIN `siswa` siswa ON guru.`NIP` = siswa.`id_siswa`
+     INNER JOIN `nilai` nilai ON guru.`NIP` = nilai.`id_nilai`]]>
+	</queryString>
+	<field name="siswa_id_siswa" class="java.lang.String"/>
+	<field name="siswa_nama_siswa" class="java.lang.String"/>
+	<field name="siswa_alamat" class="java.lang.String"/>
+	<field name="siswa_no_telp" class="java.lang.String"/>
+	<field name="siswa_jenis_kelamin" class="java.lang.String"/>
+	<field name="guru_NIP" class="java.lang.String"/>
+	<field name="guru_nama_guru" class="java.lang.String"/>
+	<field name="guru_TTL" class="java.lang.String"/>
+	<field name="guru_alamat" class="java.lang.String"/>
+	<field name="guru_pendidikan" class="java.lang.String"/>
+	<field name="guru_study" class="java.lang.String"/>
+	<field name="guru_jenis_kelamin" class="java.lang.String"/>
+	<field name="nilai_id_nilai" class="java.lang.String"/>
+	<field name="nilai_no_induk" class="java.lang.String"/>
+	<field name="nilai_nama_siswa" class="java.lang.String"/>
+	<field name="nilai_kehadiran" class="java.lang.String"/>
+	<field name="nilai_kedisiplinan" class="java.lang.String"/>
+	<field name="nilai_keterampilan" class="java.lang.String"/>
+	<field name="nilai_kerapian" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
